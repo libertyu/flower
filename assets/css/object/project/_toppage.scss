@@ -1,0 +1,636 @@
+/***************************************************************************************
+ *  project-toppage設定
+ ***************************************************************************************/
+@mixin md {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+/* p-top css*/
+.p-top {
+  position: relative;
+  height: 100vh;
+  background-image: url("./../images/header_pink.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  text-align: center;
+
+  @include md {
+    background-image: url("./../images/bg_header_pink_sp.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__logo {
+    width: 131px;
+    height: 116px;
+    padding-top: 80px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    img {
+      width: 131px;
+      height: 116px;
+    }
+  }
+
+  &__tagline {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 350px;
+  }
+
+  &__download {
+    position: absolute;
+    top: 80%;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto auto;
+
+    // @include md {
+    //     position: fixed;
+    //     background-color: #fff;
+    //     margin-top: 100px;
+    //     z-index: 100;
+    // }
+
+    &-badge {
+      padding: 0 7px;
+      width: 164px;
+      height: 49px;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+/* p-service1 css*/
+@mixin service1-item($img-num) {
+  width: calc(100% / 3);
+  height: 70vh;
+  padding: 8vmin 6vmin;
+  background-image: url("./../images/bg_service1-#{$img-num}.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+.p-service1 {
+  &__container {
+    display: flex;
+
+    @include md {
+      display: block;
+    }
+
+    &-item-1 {
+      @include service1-item(1);
+
+      @include md {
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+
+    &-item-2 {
+      @include service1-item(2);
+
+      @include md {
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+
+    &-item-3 {
+      @include service1-item(3);
+
+      @include md {
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* p-price css*/
+.p-price {
+  &__container {
+    display: flex;
+
+    @include md {
+      display: block;
+    }
+  }
+
+  &__bouquet {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 64px 24px;
+    background-color: #f5f5f5;
+    text-align: center;
+
+    @include md {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    &-wrap {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+
+    &-img {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto 24px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-price {
+      margin: 16px auto 36px;
+      font-size: 1.5rem;
+      line-height: 1.5;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    &-shipping {
+      p {
+        font-size: 1.3rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &__frequency {
+    box-sizing: border-box;
+    width: 50%;
+    margin: auto;
+    padding: 64px 24px;
+    text-align: center;
+
+    @include md {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 34px;
+      font-size: 2rem;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+
+    &-img {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* p-flower css*/
+.p-flower {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 6vmin;
+  height: 730px;
+  background-color: #ead5dc;
+
+  @include md {
+    flex-flow: column;
+    padding: 16vmin 6vmin 20vmin;
+  }
+
+  &__img {
+    width: 50%;
+    height: 100vh;
+    background-image: url("./../images/bg_flower.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include md {
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    width: 50%;
+    margin: 100px 0;
+    text-align: center;
+
+    @include md {
+      order: 1;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+
+      @include md {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__body {
+    width: 50%;
+
+    @include md {
+      order: 3;
+      width: 100%;
+    }
+
+    &-item {
+      h2 {
+        font-size: 2.2rem;
+        margin-top: 24px;
+        margin-bottom: 10px;
+        font-weight: normal;
+        text-align: center;
+
+        @include md {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        max-width: 400px;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+      }
+    }
+  }
+}
+
+/* p-vase css*/
+.p-vase {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10vmin 0 0 6vmin;
+  height: 730px;
+  background-color: #e7e3df;
+
+  @include md {
+    flex-flow: column;
+    padding: 16vmin 6vmin 20vmin;
+  }
+
+  &__img {
+    width: 50%;
+    height: 730px;
+    background-image: url("./../images/bg_vase.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    order: 1;
+
+    @include md {
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    width: 50%;
+    margin-bottom: 150px;
+    text-align: center;
+    line-height: 1.5;
+
+    @include md {
+      order: 1;
+      width: 100%;
+      margin-bottom: 0px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+      margin-bottom: 16px;
+    }
+
+    p {
+      width: 130px;
+      margin: 0 auto;
+      padding: 6px 8px;
+      font-size: 1.4rem;
+      background-color: #fff;
+    }
+  }
+
+  &__content {
+    width: 50%;
+    margin: 0 auto;
+
+    @include md {
+      order: 3;
+      width: 100%;
+    }
+
+    p {
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 1.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.05rem;
+    }
+  }
+
+  &__variation {
+    width: 400px;
+    margin: 24px auto;
+    display: flex;
+    justify-content: space-between;
+
+    @include md {
+      order: 4;
+      width: 100%;
+    }
+
+    &-bell {
+      position: relative;
+      width: 98px;
+      height: 116px;
+      background-image: url("./../images/vase_bell.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      p {
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        left: 0;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+
+    &-moon {
+      position: relative;
+      width: 98px;
+      height: 116px;
+      background-image: url("./../images/vase_bell.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      p {
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        left: 0;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+
+    &-candle {
+      position: relative;
+      width: 98px;
+      height: 116px;
+      background-image: url("./../images/vase_bell.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      p {
+        position: absolute;
+        bottom: 4px;
+        right: 0;
+        left: 0;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+  }
+
+  &__price {
+    width: 400px;
+    margin: 0 auto 16px;
+    display: flex;
+    line-height: 1.6;
+
+    @include md {
+      order: 5;
+      width: 100%;
+    }
+
+    &-title {
+      width: 100px;
+      border: 2px solid;
+      padding: 4px;
+      margin-right: 16px;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+
+    &-discount {
+      font-size: 1.8rem;
+    }
+
+    &-normal {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__footnote {
+    width: 400px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+
+    @include md {
+      order: 6;
+      width: 100%;
+    }
+  }
+}
+
+/* p-service2 css*/
+.p-service2 {
+  padding: 12vmin 4vmin 16vmin;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 2.6rem;
+    font-weight: normal;
+    line-height: 1.6;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+
+    @include md {
+      flex-flow: column;
+    }
+
+    &-item {
+      width: 33.333%;
+
+      @include md {
+        width: 100%;
+      }
+
+      img {
+        width: 80px;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+/* p-download css*/
+.p-download {
+  display: flex;
+  height: 420px;
+  padding: 0 4vmin;
+  background-color: #efdfc5;
+
+  @include md {
+    flex-flow: column;
+  }
+
+  &__logo {
+    order: 2;
+    height: 145px;
+    background-image: url("./../images/logo_vertical_navy.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 118px;
+    margin-left: -250px;
+    margin-top: 60px;
+    padding-top: 76px;
+
+    @include md {
+      order: 1;
+      margin-left: 0px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: normal;
+      margin-top: 16px;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    order: 1;
+    width: 80%;
+    height: 420px;
+    background-image: url("./../images/bg_download2.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+
+    @include md {
+      order: 2;
+      background-size: cover;
+      background-position: center bottom;
+      margin: 0 auto;
+    }
+  }
+}
+
+.p-footer {
+  position: relative;
+  background-color: #3f434a;
+  padding: 8vmin 8vmin 32vmin;
+
+  &__instagram {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    background-image: url("./../images/icon_instagram.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    margin-bottom: 48px;
+
+    @media (min-width: 767px) {
+      display: block;
+    }
+  }
+
+  &__item {
+    flex-grow: 1;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 30px;
+
+    @media (min-width: 767px) {
+      width: 100%;
+      margin: 50px;
+    }
+  }
+
+  &__copyright {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 124px;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    opacity: 0.4;
+  }
+}
